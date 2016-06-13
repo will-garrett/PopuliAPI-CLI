@@ -5,6 +5,11 @@
     $populi=new Populi(); // if no token is given, see populi.class.php for $populi->login
 
     $arguments=array();
+
+    if(API_TOKEN == "NULL"){
+        $populi->login(POPULI_USER, POPULI_PASS);
+    }
+
     for($i=2; $i<=$num_args; $i++){
         if($i%2 == 0){
             $arguments[$argv[$i]]=$argv[$i+1];
